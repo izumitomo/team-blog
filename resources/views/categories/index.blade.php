@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+        <h2>カテゴリーページ</h2>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post' style='border: solid 2px; margin: 5px; padding: 10px;'>
@@ -15,7 +16,7 @@
                         <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
                     <p class='body'>{{ $post->body}}</p>
-                    <p>カテゴリー:<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
+                    <p>カテゴリー:<a href="">{{ $post->category->name }}</a></p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                         @csrf
                         @method('DELETE')
@@ -30,5 +31,6 @@
         <div>
             [<a href='/posts/create'>新規作成</a>]
         </div>
+        <a href="/">戻る</a>
     </body>
 </html>
