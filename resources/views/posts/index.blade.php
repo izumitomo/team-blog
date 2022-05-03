@@ -7,14 +7,14 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>レバッカソン</h1>
         <div class='posts'>
             @foreach($posts as $post)
-                <div class='post' style='border: solid 2px; margin: 5px; padding: 10px;'>
+                <div class='post'>
                     <h2 class='title'>
-                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                        タイトル：<a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                     </h2>
-                    <p class='body'>{{ $post->body}}</p>
+                    <p class='body'>本文：{{ $post->body}}</p>
                     <p>カテゴリー:<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                         @csrf
