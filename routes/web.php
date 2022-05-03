@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', 'PostController@index');
-Route::get('/posts/create', 'PostController@create');
-Route::get('/posts/{post}/edit', 'PostController@edit');
-Route::put('/posts/{post}', 'PostController@update');
-Route::get('/posts/{post}', 'PostController@show');
-Route::get('/posts', 'PostController@index');
-Route::post('/posts', 'PostController@store');
-Route::delete('/posts/{post}', 'PostController@delete');
-Route::get('/categories/{category}', 'CategoryController@index');
+Route::get('/', 'PostController@index'); //一覧画面
+Route::get('/posts/create', 'PostController@create'); //投稿作成画面
+Route::get('/posts/{post}/edit', 'PostController@edit'); //投稿編集画面
+Route::put('/posts/{post}', 'PostController@update'); //編集操作
+Route::get('/posts/{post}', 'PostController@show'); //投稿詳細画面
+Route::post('/posts', 'PostController@store'); //投稿保存操作
+Route::delete('/posts/{post}', 'PostController@delete'); //投稿削除
+Route::get('/categories/{category}', 'CategoryController@index'); //カテゴリー一覧画面
