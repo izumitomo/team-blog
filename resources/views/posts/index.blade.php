@@ -7,7 +7,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>レバッカソン</h1>
+        <h1>レバテックチーム開発</h1>
+        <h2>投稿一覧ページ</h2>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>

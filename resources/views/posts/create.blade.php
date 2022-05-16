@@ -5,7 +5,8 @@
         <title>Blog</title>
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>レバテックチーム開発</h1>
+        <h2>投稿作成ページ</h2>
         <form action="/posts" method="POST">
             @csrf
             <div class="title">

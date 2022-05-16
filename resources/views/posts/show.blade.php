@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body>
-        <h1 class="title">
+        <h1>投稿詳細ページ</h1>
+        <h2 class="title">
             タイトル：{{ $post->title }}
         </h1>
         <div class="content">

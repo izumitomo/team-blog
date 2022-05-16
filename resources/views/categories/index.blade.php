@@ -7,8 +7,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>レバッカソン</h1>
-        <h2>カテゴリーページ</h2>
+        <h1>レバテックチーム開発</h1>
+        <h2>カテゴリー「{{$posts->first()->category->name}}」の一覧ページ</h2>
         <div class='posts'>
             @foreach($posts as $post)
                 <div class='post'>
@@ -31,6 +31,6 @@
         <div>
             [<a href='/posts/create'>新規作成</a>]
         </div>
-        <a href="/">戻る</a>
+        <a href="/">一覧へ戻る</a>
     </body>
 </html>
