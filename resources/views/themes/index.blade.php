@@ -10,30 +10,30 @@
         <h1>大喜利</h1>
         <h2>お題一覧</h2>
         <div>
-            [<a href='/posts/create'>新規作成</a>]
+            [<a href='/themes/create'>新規作成</a>]
         </div>
-        <div class='posts'>
-            @foreach($posts as $post)
-                <div class='post'>
+        <div class='themes'>
+            @foreach($themes as $theme)
+                <div class='theme'>
                     <h2 class='title'>
-                        <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
+                        <a href="/themes/{{ $theme->id }}">{{ $theme->title }}</a>
                     </h>
-                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}"  method="post" style="display:inline">
+                    <form action="/themes/{{ $theme->id }}" id="form_{{ $theme->id }}"  method="theme" style="display:inline">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onClick="deletePost({{$post->id}});">削除</button> {{--script内に定義したdeletePostを使用している--}}
+                        <button type="button" onClick="deleteTheme({{$theme->id}});">削除</button> {{--script内に定義したdeleteThemeを使用している--}}
                     </form>
                 </div>
             @endforeach
         </div>
         <div class='paginate'>
-            {{ $posts->links() }}
+            {{ $themes->links() }}
         </div>
         
     </body>
     <script>
-        function deletePost(post_id) {
-            form = document.getElementById('form_' + post_id);  //各投稿ごとのdeleteのformを取得
+        function deleteTheme(theme_id) {
+            form = document.getElementById('form_' + theme_id);  //各投稿ごとのdeleteのformを取得
             is_submit = confirm('本当に削除してもよろしいですか？'); //はいの場合true,いいえの場合falseをis_submitに格納
             
             if(is_submit) {  //is_submitがtrueの場合のみ、{}の中の処理が行われる
