@@ -18,7 +18,7 @@ class CreateAnswersTable extends Migration
             
             $table->Increments('id');
             $table->foreign("theme_id")->references("id")->on("themes");
-            $table->string("body");
+            $table->string("body", 100);
             $table->timestamps();
         });
     }
