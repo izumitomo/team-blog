@@ -11,33 +11,28 @@
     <body>
         <h1>投稿詳細ページ</h1>
         <h2 class="title">
-            タイトル：{{ $theme->title }}
+            お題：{{ $theme->title }}
         </h2>
+        <div class='answers'>
+            @foreach($answers as $answer)
+                <div class='answer'>
+                    <h2 class='title'>
+                        <p>{{ $answer->body }}</p>
+                    </h>
+                </div>
+            @endforeach
+        </div>
         
-        <form action="/themes" method="POST">
+        <form action="/themes/{{$theme->id}}" method="POST">
             @csrf
             <div class="title">
-                <h2>Title</h2>
-                <input type="text" name="answers[body]" placeholder="タイトル"/>
-            </div>
-            <div class="body">
-                <h2>Body</h2>
-                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
+                <p>あなたの回答</p>
+                <textarea name="body"/></textarea>
             </div>
             <input type="submit" value="保存"/>
         </form>
-
         <div class="footer">
-            <p class="edit">[<a href="/themes/{{ $theme->id }}/edit">編集</a>]</p>
             <a href="/">一覧ページへ戻る</a>
-            <p class='make'>[<a href='/themes/make'>make</a>]</p>
-        </div>
-        
-        <div class='posts'>
-            <div class='post'>
-                <h2 class='title'>Title</h2>
-                <p class='body'>This is a sample body.</p>
-            </div>
         </div>
     </body>
 </html>
