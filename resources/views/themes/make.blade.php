@@ -5,7 +5,7 @@
         <title>Blog</title>
     </head>
     <body>
-        <h1>レバテックチーム開発</h1>
+        <h1>大喜利大会</h1>
         <h2 class="title">
             タイトル：{{ $theme->title }}
         </h2>
