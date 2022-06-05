@@ -53,6 +53,7 @@ class ThemeController extends Controller
 //        dd($answer->get());
         $id = $theme->id;
         $answers = $answer->where("theme_id", $id)->get();
+        //dd($id);
 
         return view('themes/show')->with(['theme' => $theme, "answers" => $answers]);
     }

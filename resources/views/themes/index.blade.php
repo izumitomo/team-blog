@@ -9,9 +9,7 @@
     <body>
         <h1>大喜利</h1>
         <h2>お題一覧</h2>
-        <div>
-            [<a href='/themes/create'>新規作成</a>]
-        </div>
+
         <div class='themes'>
             @foreach($themes as $theme)
                 <div class='theme'>
