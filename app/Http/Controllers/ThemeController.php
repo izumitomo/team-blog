@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //use App\Http\Requests\ThemeRequest;
+use App\Answer;
 use App\Theme;
 
 class ThemeController extends Controller
@@ -47,9 +48,13 @@ class ThemeController extends Controller
        return view('themes/{theme}/make')->with(['theme' => $theme]);
     }
     
-    public function show(Theme $theme)
+    public function show(Theme $theme, Answer $answer)
     {
-        return view('themes/show')->with(['theme' => $theme]);
+//        dd($answer->get());
+        $id = $theme->id;
+        $answers = $answer->where("theme_id", $id)->get();
+
+        return view('themes/show')->with(['theme' => $theme, "answers" => $answers]);
     }
     
     public function create(gotCategory $categor)
@@ -57,11 +62,13 @@ class ThemeController extends Controller
         return view('themes/create')->with(['categories' => $category->get()]);;
     }
     
-    public function store(ThemeRequest $request, Theme $theme)
+    public function store(Request $request, Answer $answer, $theme)
     {
-        $input = $request['theme'];
-        $theme->fill($input)->save();
-        return redirect('/themes/' . $theme->id);
+        $input = $request -> all();
+        $input += ["theme_id"=>$theme];
+        //dd($answer);
+        $answer->fill($input)->save();
+        return redirect('/themes/' . $theme);
     }
     
     public function edit(Theme $theme)
