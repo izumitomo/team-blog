@@ -17,6 +17,7 @@
         <div class="footer">
             <p class="edit">[<a href="/themes/{{ $theme->id }}/edit">編集</a>]</p>
             <a href="/">一覧ページへ戻る</a>
+            <p class='make'>[<a href='/themes/make'>make</a>]</p>
         </div>
     </body>
 </html>
