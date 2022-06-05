@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>Rainy Blog</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
@@ -30,11 +30,21 @@
             {{ $themes->links() }}
         </div>
         <div>
-            <a href="/rainy">今日は雨？</a>
+  
         </div>
         
     </body>
     <script>
+        const weather =@json($weather);
+        let  today_tokyo_weather =weather[0].timeSeries[0].areas[0].weathers[0];
+        console.log(today_tokyo_weather);
+        console.log(typeof today_tokyo_weather)
+        if (today_tokyo_weather.indexOf("雨") !== -1) {
+            console.log("雨！！！");
+        }
+        
+        function isRainy()
+            if 
         
         function deleteTheme(theme_id) {
             form = document.getElementById('form_' + theme_id);  //各投稿ごとのdeleteのformを取得
