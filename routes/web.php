@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'ThemeController@index'); //一覧画面
+Route::get("/rainy", "ThemeController@rainy");
 Route::get('/themes/create', 'ThemeController@create'); //投稿作成画面
 Route::get('/themes/{theme}/edit', 'ThemeController@edit'); //投稿編集画面
 Route::put('/themes/{theme}', 'ThemeController@update'); //編集操作
