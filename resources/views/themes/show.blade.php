@@ -12,7 +12,20 @@
         <h1>投稿詳細ページ</h1>
         <h2 class="title">
             タイトル：{{ $theme->title }}
-        </h1>
+        </h2>
+        
+        <form action="/themes" method="POST">
+            @csrf
+            <div class="title">
+                <h2>Title</h2>
+                <input type="text" name="answers[body]" placeholder="タイトル"/>
+            </div>
+            <div class="body">
+                <h2>Body</h2>
+                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
+            </div>
+            <input type="submit" value="保存"/>
+        </form>
 
         <div class="footer">
             <p class="edit">[<a href="/themes/{{ $theme->id }}/edit">編集</a>]</p>
