@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>Blog</title>
+        <title>大喜利</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
@@ -29,9 +29,13 @@
         <div class='paginate'>
             {{ $themes->links() }}
         </div>
+        <div>
+            <a href="/rainy">今日は雨？</a>
+        </div>
         
     </body>
     <script>
+        
         function deleteTheme(theme_id) {
             form = document.getElementById('form_' + theme_id);  //各投稿ごとのdeleteのformを取得
             is_submit = confirm('本当に削除してもよろしいですか？'); //はいの場合true,いいえの場合falseをis_submitに格納

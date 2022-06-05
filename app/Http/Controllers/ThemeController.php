@@ -10,7 +10,36 @@ class ThemeController extends Controller
 {
     public function index(Theme $theme)
     {
-        return view('themes/index')->with(['themes' => $theme->getPaginateByLimit()]);
+        return view('themes/index')->with([
+        'themes' => $theme->getPaginateByLimit(),
+        ]);
+    }
+
+    
+    public function rainy(Theme $theme){
+        $client = new \GuzzleHttp\Client();
+        
+        $url= 'https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json';
+        $response = $client->request(
+            'GET',
+            $url,
+        );
+            
+        $weather = json_decode($response->getBody(), true);
+        
+        //dd($weather[0]["timeSeries"][0]["areas"][0]["weathers"][0]);
+        $today_tokyo_weather = $weather[0]["timeSeries"][0]["areas"][0]["weathers"][0];
+        if (strpos($today_tokyo_weather, "雨") !== false){
+            return view('themes/rainy_index')->with([
+            'themes' => $theme->getPaginateByLimit(),
+            "weather" => $weather
+            ]);
+        }else{
+            return view('themes/index')->with([
+            'themes' => $theme->getPaginateByLimit(),
+            "weather" => $weather
+            ]);
+        }
     }
     
     public function show(Theme $theme)
