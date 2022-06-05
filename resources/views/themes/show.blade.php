@@ -19,5 +19,12 @@
             <a href="/">一覧ページへ戻る</a>
             <p class='make'>[<a href='/themes/make'>make</a>]</p>
         </div>
+        
+        <div class='posts'>
+            <div class='post'>
+                <h2 class='title'>Title</h2>
+                <p class='body'>This is a sample body.</p>
+            </div>
+        </div>
     </body>
 </html>
