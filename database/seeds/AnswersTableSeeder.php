@@ -20,8 +20,6 @@ class AnswersTableSeeder extends Seeder
             'updated_at' => now(),
                 ],
                 [
-            
-                [
             'theme_id' => '2',
             'id' => '2',
             'body' => '髪の毛が傘の骨に引っかかること',
