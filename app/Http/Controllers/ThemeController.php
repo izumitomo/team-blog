@@ -19,9 +19,7 @@ class ThemeController extends Controller
     public function rainy(Theme $theme){
         $client = new \GuzzleHttp\Client();
         
-        
         $url= 'https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json';
-        // ストリームコンテキストのオプションを作成
         $response = $client->request(
             'GET',
             $url,
