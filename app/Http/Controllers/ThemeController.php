@@ -13,12 +13,17 @@ class ThemeController extends Controller
         return view('themes/index')->with(['themes' => $theme->getPaginateByLimit()]);
     }
     
+    public function make(Theme $theme)
+    {
+       return view('themes/{theme}/make')->with(['theme' => $theme]);
+    }
+    
     public function show(Theme $theme)
     {
         return view('themes/show')->with(['theme' => $theme]);
     }
     
-    public function create(Category $category)
+    public function create(gotCategory $categor)
     {
         return view('themes/create')->with(['categories' => $category->get()]);;
     }
